@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(10, 0, 0);
+  background-color: aliceblue;
+  height: 100vh;
+  }
+
+  a{
+      color: #ac1831;
+      font-weight: 500;
+      text-decoration: none;
+  }
+
+  a:hover{
+      color: #09aa23;
+      text-decoration: none;
+      transition: 500ms;
+  }
+
+
+
+  .navbar-custom{
+      background-color: rgb(0, 0, 0);
+      color: #fff;
+      }
+
+  .footer-custom{
+      background-color: rgb(0, 0, 0);
+      color: #fff;
+      }
+
+
+  .navbar-toggler{
+      border: none;
+      padding: 10px 6px;
+      outline: none;
+  
+    }
+  
+    .navbar-toggler span{
+      display: block;
+      width: 22px;
+      height: 2px;
+      border: 1px;
+      background: #fff ;
+    }
+  
+    .navbar-toggler span + span{
+      margin-top: 4px;
+      width: 22px;
+    }
+  
+    .navbar-toggler span + span + span{
+      width: 22px;
+    }
+
+    
+    
+
+    
+
+
+
+
+
+
+
+
+         
+          
+    
+
+

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    background-color: #323a45;
+    }
+
+    a{
+        color: #b1b4bd;
+        font-weight: 500;
+    }
+
+    a:hover{
+        color: #09aa23;
+        text-decoration: none;
+        transition: 500ms;
+    }
+
+    .navbar{
+        background-color: rgba(5, 0, 8);
+        min-height: 80px;
+        overflow: hidden;
+        width: 100%;
+
+    }
+
+   .nav-link{
+       color: #ffffff;
+       
+   }
+
+   .navbar-toggler{
+     border: none;
+     padding: 10px 6px;
+     outline: none;
+
+   }
+
+   .navbar-toggler span{
+     display: block;
+     width: 22px;
+     height: 2px;
+     border: 1px;
+     background: #ffffff ;
+   }
+
+   .navbar-toggler span + span{
+    margin-top: 4px;
+    width: 22px;
+  }
+
+  .navbar-toggler span + span + span{
+    width: 22px;
+  }
+
+  
+
+
+  
+  .carousel-size{
+    max-height: 70vh;
+  }
+
+  .carousel_position>h1{
+    position: absolute;
+    bottom: 45%;
+    left: 30vw;
+    right:30vw;
+    width: 40vw;
+    color: #fff;
+    text-align: center;
+    z-index: 12;
+    font-size: 5vw;
+    font-weight: 500;
+  }
+
+
+
+    .paragraph{
+        font-size: 1.1rem;
+        line-height: 1.4;
+        text-align: justify;
+    }
+
+    footer{
+      background-color: #000000;
+      width: 100%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+{% extends './common.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    {% block content %}
+        <div class="form-bg bg-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-md-4 col-lg-8">
+                        <div class="form-container">
+                            {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-dismissible alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    ×
+                                </button>
+                                <strong>{{message}}<strong>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                            <form action="{% url 'costcal' %}" method="post" class="form-horizontal">
+                                {% csrf_token %}
+                                <h3 class="title">Equipment details</h3>
+                                <div class="form-group">
+                                    <span class="input-icon"><i class="fa fa-check"></i></span>
+                                    <select class="form-control" name="equipment_name" >
+                                        <option>Floodlights</option>
+                                        <option>HandDryer</option>
+                                        <option>FluorescentTube</option>
+                                        <option>Printers</option>
+                                        <option>Amplifiers</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <span class="input-icon"><i class="fa fa-check"></i></span>
+                                    <input class="form-control" type="text" placeholder="Quantity" name="quantity" required>
+                                </div>
+                                <div class="form-group">
+                                    <span class="input-icon"><i class="fa fa-check"></i></span>
+                                    <input class="form-control" type="text" placeholder="Rating in KWh" name="rating" required>
+                                </div>
+                                <div class="form-group">
+                                    <span class="input-icon"><i class="fa fa-check" aria-hidden="true"></i></span>
+                                    <input class="form-control" type="text" placeholder="Hours used" name="hours_used" required>
+                                </div>
+                                <button class="btn signin">Submit</button>
+                                <span class="forgot-pass"><a href="#">Check consumption analyzer</a></span>
+                                <span class="user-signup"><a href="{% url 'costcal' %}">Add Equipment</a></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}
+
+
+
+
+
+
+</body>
+</html>
