@@ -1,1 +1,1 @@
-web: gunicorn economiser.wsgi
+web: gunicorn equalizer.wsgi
