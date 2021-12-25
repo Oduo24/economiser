@@ -13,8 +13,6 @@ def IndexView(request):
     return render(request, "home/main2.html")
 
 
-
-
 def CostcalView(request):
     # if this is a POST request process the form data
     global form
@@ -58,6 +56,9 @@ def CostcalView(request):
             cost = int(val_4) * int(val_3) * 10 * int(val_2)
             ins = Photocopier(hours_used=val_4, daily_cost=cost)
             ins.save()
+
+        else:
+            messages.success(request, 'error')
 
 
         # redirect to a new URL:
