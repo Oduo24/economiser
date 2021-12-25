@@ -1,1 +1,1 @@
-web: gunicorn GTech.wsgi
+web: gunicorn economiser.wsgi
