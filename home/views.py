@@ -63,7 +63,7 @@ def CostcalView(request):
 
         # redirect to a new URL:
         #return HttpResponse('thanks')
-        messages.success(request, 'Equipment added successfully, add another equipment...')
+        messages.success(request, 'Equipment added successfully, to add another, click add equipment...')
 
     # if a GET (or any other method) create a blank form
     else:
