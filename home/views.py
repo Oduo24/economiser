@@ -16,6 +16,7 @@ def IndexView(request):
 def CostcalView(request):
     # if this is a POST request process the form data
     global form
+    form = EquipmentForm()
     if request.method == 'POST':
         val_1 = request.POST['equipment_name']
         val_2 = request.POST['quantity']
