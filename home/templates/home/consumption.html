@@ -1,0 +1,119 @@
+{% extends './common.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+{% block content %}
+<div class="container mt-3 text-white">
+    <table class="table table-dark table-striped">
+        <h3 class="caption-top text-dark text-center">Meter 1</h3>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Week ending</th>
+            <th>Meter location</th>
+            <th>consumption</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for data in meter1_consumption %}
+                <td>{{data.id}}</td>
+                <td>{{data.date}}</td>
+                <td>{{data.meter_location}}</td>
+                <td>{{data.consumption}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td>Total Consumption</td>
+            <td></td>
+            <td></td>
+            <td>{{total1}}</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="container mt-3 text-white">
+    <table class="table table-dark table-striped">
+        <h3 class="caption-top text-dark text-center">Meter 2</h3>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Week ending</th>
+            <th>Meter location</th>
+            <th>consumption</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for data in meter2_consumption %}
+            <td>{{data.id}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.meter_location}}</td>
+            <td>{{data.consumption}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td>Total Consumption</td>
+            <td></td>
+            <td></td>
+            <td>{{total2}}</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="container mt-3 text-white">
+    <table class="table table-dark table-striped">
+        <h3 class="caption-top text-dark text-center">Meter 3</h3>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Week ending</th>
+            <th>Meter location</th>
+            <th>consumption</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for data in meter3_consumption %}
+            <td>{{data.id}}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.meter_location}}</td>
+            <td>{{data.consumption}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td>Total Consumption</td>
+            <td></td>
+            <td></td>
+            <td>{{total3}}</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+</body>
+</html>
