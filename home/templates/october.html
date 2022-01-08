@@ -1,0 +1,53 @@
+{% extends './common.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+{% block content %}
+<div class="dropdown text-center pt-3">
+    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+        Select Month
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+        <li><a class="dropdown-item" href="{% url 'january' %}">January</a></li>
+        <li><a class="dropdown-item" href="{% url 'february' %}">February</a></li>
+        <li><a class="dropdown-item" href="{% url 'march' %}">March</a></li>
+        <li><a class="dropdown-item" href="{% url 'april' %}">April</a></li>
+        <li><a class="dropdown-item" href="{% url 'may' %}">May</a></li>
+        <li><a class="dropdown-item" href="{% url 'june' %}">June</a></li>
+        <li><a class="dropdown-item" href="{% url 'july' %}">July</a></li>
+        <li><a class="dropdown-item" href="{% url 'august' %}">August</a></li>
+        <li><a class="dropdown-item" href="{% url 'september' %}">September</a></li>
+        <li><a class="dropdown-item" href="{% url 'october' %}">October</a></li>
+        <li><a class="dropdown-item" href="{% url 'november' %}">November</a></li>
+        <li><a class="dropdown-item" href="{% url 'december' %}">December</a></li>
+    </ul>
+</div>
+
+<div class="px-5 pt-5 text-dark">
+    <h5>October Analyzer:</h5>
+</div>
+
+{% if graph %}
+
+{{ graph|safe }}
+
+{% endif %}
+
+{% endblock %}
+
+
+
+
+
+
+</body>
+</html>

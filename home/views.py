@@ -9,6 +9,11 @@ from .models import Printer, HandDryer, FluorescentTube, Floodlight, Amplifier, 
     Meter1, Meter2, Meter3
 from django.contrib import messages
 
+import pandas as ps
+import plotly.express as px
+from plotly.offline import plot
+from django.views.generic.base import TemplateView
+
 
 def IndexView(request):
     return render(request, "home/main2.html")
@@ -135,3 +140,220 @@ def ConsumptionView(request):
                                                      'total1': total1,
                                                      'total2': total2,
                                                      'total3': total3})
+
+
+class JanuaryView(TemplateView):
+    template_name = 'january.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class FebruaryView(TemplateView):
+    template_name = 'february.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class MarchView(TemplateView):
+    template_name = 'march.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class AprilView(TemplateView):
+    template_name = 'april.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class MayView(TemplateView):
+    template_name = 'may.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class JuneView(TemplateView):
+    template_name = 'june.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class JulyView(TemplateView):
+    template_name = 'july.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class AugustView(TemplateView):
+    template_name = 'august.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class SeptemberView(TemplateView):
+    template_name = 'september.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class OctoberView(TemplateView):
+    template_name = 'october.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class NovemberView(TemplateView):
+    template_name = 'november.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class DecemberView(TemplateView):
+    template_name = 'december.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = [1, 2, 3, 4]
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context

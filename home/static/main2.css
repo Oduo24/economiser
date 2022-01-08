@@ -185,6 +185,97 @@ body {
 
 
 
+     a:hover,
+     a:focus{
+         text-decoration: none;
+         outline: none;
+     }
+     .tab{
+         font-family: 'Raleway', sans-serif;
+         padding: 15px;
+     }
+     .tab .nav-tabs{
+         padding: 0 10px;
+         margin: 0;
+         border: none;
+     }
+     .tab .nav-tabs li a{
+         color: #333;
+         background: #fff;
+         font-size: 16px;
+         font-weight: 600;
+         text-align: center;
+         text-transform: capitalize;
+         padding: 10px 20px;
+         margin: 0 10px 5px 0;
+         border: none;
+         border-radius: 10px;
+         box-shadow: 0 0 7px rgba(0,0,0,0.1);
+         position: relative;
+         z-index: 1;
+         transition: all 0.3s ease 0.15s;
+         text-decoration: none;
+     }
+     .tab .nav-tabs li.active a,
+     .tab .nav-tabs li a:hover,
+     .tab .nav-tabs li.active a:hover{
+         color: #aa551d;
+         background: #fff;
+         border: none;
+         box-shadow: 0 -2px 0 2px #aa551d;
+     }
+     .tab .nav-tabs li a:before{
+         content: "";
+         background: #aa551d;
+         height: 10px;
+         width: 70%;
+         border-radius: 15px;
+         opacity: 0;
+         transform: translateX(-50%);
+         position: absolute;
+         bottom: 15px;
+         left: 50%;
+         z-index: -1;
+         transition: all 0.3s ease-out 0s;
+     }
+     .tab .nav-tabs li.active a:before,
+     .tab .nav-tabs li a:hover:before{
+         width: 50%;
+         opacity: 1;
+         bottom: -7px;
+     }
+     .tab .tab-content{
+         color: #555;
+         background: #fff;
+         padding: 20px;
+         border-radius: 15px;
+         box-shadow: 0 5px 0 5px #aa551d;
+         position: relative;
+         min-height: 100vh;
+     }
+     @media only screen and (max-width: 479px){
+         .tab .nav-tabs{
+             padding: 0;
+             margin: 0 0 15px;
+         }
+         .tab .nav-tabs li{
+             width: 100%;
+             text-align: center;
+         }
+         .tab .nav-tabs li a{
+             margin: 0 0 15px;
+             border-radius: 10px;
+         }
+     }
+
+
+     .customsize{
+        min-height: 200px;
+        background: white;
+     }
+
+
+
 
 
 
