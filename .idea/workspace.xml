@@ -3,11 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="16823cf5-2bac-484f-8fc5-1b8204b6908a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/static/main2.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/main2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/consumption.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/consumption.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/main2.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/main2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/april.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/april.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/august.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/august.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/december.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/december.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/february.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/february.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/january.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/january.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/july.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/july.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/june.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/june.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/march.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/march.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/may.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/may.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/november.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/november.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/october.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/october.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/september.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/september.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>

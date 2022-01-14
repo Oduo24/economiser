@@ -14,6 +14,12 @@ import plotly.express as px
 from plotly.offline import plot
 from django.views.generic.base import TemplateView
 
+import numpy
+from numpy import mean
+
+
+
+
 
 def IndexView(request):
     return render(request, "home/main2.html")
@@ -32,37 +38,45 @@ def CostcalView(request):
 
         if val_1 == 'Printers':
             cost = float(val_4) * float(val_3) * price * float(val_2)
-            ins = Printer(hours_used=val_4, daily_cost=cost)
-            print(cost)
+            cons = float(val_4) * float(val_3) * float(val_2)
+            ins = Printer(hours_used=val_4, daily_cost=cost, consumption=cons)
+            ins.save()
 
         elif val_1 == 'HandDryer':
             cost = float(val_4) * float(val_3) * price * float(val_2)
-            ins = HandDryer(hours_used=val_4, daily_cost=cost)
+            cons = float(val_4) * float(val_3) * float(val_2)
+            ins = HandDryer(hours_used=val_4, daily_cost=cost, consumption=cons)
             ins.save()
 
         elif val_1 == 'FluorescentTube':
             cost = float(val_4) * float(val_3) * price * float(val_2)
-            ins = FluorescentTube(hours_used=val_4, daily_cost=cost)
+            cons = float(val_4) * float(val_3) * float(val_2)
+            ins = FluorescentTube(hours_used=val_4, daily_cost=cost, consumption=cons)
             ins.save()
+
 
         elif val_1 == 'Floodlights':
             cost = float(val_4) * float(val_3) * price * float(val_2)
-            ins = Floodlight(hours_used=val_4, daily_cost=cost)
+            cons = float(val_4) * float(val_3) * float(val_2)
+            ins = Floodlight(hours_used=val_4, daily_cost=cost, consumption=cons)
             ins.save()
 
         elif val_1 == 'Amplifiers':
             cost = float(val_4) * float(val_3) * price * float(val_2)
-            ins = Amplifier(hours_used=val_4, daily_cost=cost)
+            cons = float(val_4) * float(val_3) * float(val_2)
+            ins = Amplifier(hours_used=val_4, daily_cost=cost, consumption=cons)
             ins.save()
 
         elif val_1 == 'Computers':
             cost = float(val_4) * float(val_3) * price * float(val_2)
-            ins = Computers(hours_used=val_4, daily_cost=cost)
+            cons = float(val_4) * float(val_3) * float(val_2)
+            ins = Computers(hours_used=val_4, daily_cost=cost, consumption=cons)
             ins.save()
 
         elif val_1 == 'Photocopier':
             cost = float(val_4) * float(val_3) * price * float(val_2)
-            ins = Photocopier(hours_used=val_4, daily_cost=cost)
+            cons = float(val_4) * float(val_3) * float(val_2)
+            ins = Photocopier(hours_used=val_4, daily_cost=cost, consumption=cons)
             ins.save()
 
         else:
@@ -357,3 +371,97 @@ class DecemberView(TemplateView):
         div = plot(fig, auto_open=False, output_type='div')
         context['graph'] = div
         return context
+
+
+class DailyView(TemplateView):
+    template_name = 'daily.html'
+
+    def get_context_data(self, **kwargs):
+        fluorescent_cons = FluorescentTube.objects.values_list('consumption', flat=True).last()
+        floodlight_cons = Floodlight.objects.values_list('consumption', flat=True).last()
+        amplifier_cons = Amplifier.objects.values_list('consumption', flat=True).last()
+        printer_cons = Printer.objects.values_list('consumption', flat=True).last()
+
+        context = super().get_context_data(**kwargs)
+        x = ['Fluorescent-Tubes', 'Floodlights', 'Amplifiers', 'Printers']
+        y = [fluorescent_cons, floodlight_cons, amplifier_cons, printer_cons]
+
+        avg_consumption = mean(y)
+        max_consumption = numpy.amax(y)
+
+        dictA = {"Fluorescent-Tubes": 3,
+                 "Floodlights": 11,
+                 "Amplifiers": 11,
+                 "Printers": 8}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Equipment",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+class AnnualView(TemplateView):
+    template_name = 'annual.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+
+        fig = px.line(x=x, y=y,
+                      labels={
+                          "x": "Weeks",
+                          "y": "Consumption (kWh)",
+                      })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

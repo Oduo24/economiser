@@ -12,24 +12,32 @@
 
 
 {% block content %}
-<div class="dropdown text-center pt-3">
-    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-        Select Month
-    </button>
-    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-        <li><a class="dropdown-item" href="{% url 'january' %}">January</a></li>
-        <li><a class="dropdown-item" href="{% url 'february' %}">February</a></li>
-        <li><a class="dropdown-item" href="{% url 'march' %}">March</a></li>
-        <li><a class="dropdown-item" href="{% url 'april' %}">April</a></li>
-        <li><a class="dropdown-item" href="{% url 'may' %}">May</a></li>
-        <li><a class="dropdown-item" href="{% url 'june' %}">June</a></li>
-        <li><a class="dropdown-item" href="{% url 'july' %}">July</a></li>
-        <li><a class="dropdown-item" href="{% url 'august' %}">August</a></li>
-        <li><a class="dropdown-item" href="{% url 'september' %}">September</a></li>
-        <li><a class="dropdown-item" href="{% url 'october' %}">October</a></li>
-        <li><a class="dropdown-item" href="{% url 'november' %}">November</a></li>
-        <li><a class="dropdown-item" href="{% url 'december' %}">December</a></li>
-    </ul>
+<div class="row justify-content-center">
+    <div class="col-md-4 col-lg-4 col-sm-4 text-center">
+        <div class="btn-group pt-3" role="group">
+            <a href="{% url 'daily' %}" class="btn btn-primary">Daily</a>
+            <a href="{% url 'annual' %}" class="btn btn-success">Annual</a>
+        </div>
+        <div class="dropdown text-center pt-3">
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                Monthly
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                <li><a class="dropdown-item" href="{% url 'january' %}">January</a></li>
+                <li><a class="dropdown-item" href="{% url 'february' %}">February</a></li>
+                <li><a class="dropdown-item" href="{% url 'march' %}">March</a></li>
+                <li><a class="dropdown-item" href="{% url 'april' %}">April</a></li>
+                <li><a class="dropdown-item" href="{% url 'may' %}">May</a></li>
+                <li><a class="dropdown-item" href="{% url 'june' %}">June</a></li>
+                <li><a class="dropdown-item" href="{% url 'july' %}">July</a></li>
+                <li><a class="dropdown-item" href="{% url 'august' %}">August</a></li>
+                <li><a class="dropdown-item" href="{% url 'september' %}">September</a></li>
+                <li><a class="dropdown-item" href="{% url 'october' %}">October</a></li>
+                <li><a class="dropdown-item" href="{% url 'november' %}">November</a></li>
+                <li><a class="dropdown-item" href="{% url 'december' %}">December</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <div class="px-5 pt-5 text-dark">
