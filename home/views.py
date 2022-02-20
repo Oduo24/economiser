@@ -158,15 +158,15 @@ class JanuaryView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+        print(y)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
                       })
-
         div = plot(fig, auto_open=False, output_type='div')
         context['graph'] = div
         return context
@@ -177,10 +177,10 @@ class FebruaryView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -195,10 +195,10 @@ class MarchView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -213,10 +213,10 @@ class AprilView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -231,10 +231,10 @@ class MayView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -249,10 +249,10 @@ class JuneView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -267,10 +267,10 @@ class JulyView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -285,10 +285,10 @@ class AugustView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -303,10 +303,10 @@ class SeptemberView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -321,10 +321,10 @@ class OctoberView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -339,10 +339,10 @@ class NovemberView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
@@ -357,10 +357,10 @@ class DecemberView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = [1, 2, 3, 4]
+        x = ['Week1', 'Week2', 'Week3', 'Week4']
         y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
                           "x": "Weeks",
                           "y": "Consumption (kWh)",
