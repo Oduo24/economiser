@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="16823cf5-2bac-484f-8fc5-1b8204b6908a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/annual.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/annual.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/year2018.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/year2018.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/year2021.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/year2021.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

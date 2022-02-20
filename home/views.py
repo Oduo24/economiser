@@ -16,6 +16,7 @@ from django.views.generic.base import TemplateView
 
 import numpy
 from numpy import mean
+from django.db.models import Avg, Max, Min, Sum
 
 
 def IndexView(request):
@@ -424,6 +425,14 @@ class AnnualView(TemplateView):
                       })
         div = plot(fig, auto_open=False, output_type='div')
         context['graph'] = div
+
+        max_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(max=Max('year_2017'))['max']
+        avg_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(avg=Avg('year_2017'))['avg']
+        min_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(min=Min('year_2017'))['min']
+        context['max'] = max_consumption
+        context['avg'] = avg_consumption
+        context['min'] = min_consumption
+
         return context
 
 
@@ -443,6 +452,14 @@ class Year2018View(TemplateView):
                      })
         div = plot(fig, auto_open=False, output_type='div')
         context['graph'] = div
+
+        max_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(max=Max('year_2018'))['max']
+        avg_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(avg=Avg('year_2018'))['avg']
+        min_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(min=Min('year_2018'))['min']
+        context['max'] = max_consumption
+        context['avg'] = avg_consumption
+        context['min'] = min_consumption
+
         return context
 
 
@@ -462,4 +479,12 @@ class Year2021View(TemplateView):
                      })
         div = plot(fig, auto_open=False, output_type='div')
         context['graph'] = div
+
+        max_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(max=Max('year_2021'))['max']
+        avg_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(avg=Avg('year_2021'))['avg']
+        min_consumption = HistoryData.objects.values_list('year_2017', flat=True).aggregate(min=Min('year_2021'))['min']
+        context['max'] = max_consumption
+        context['avg'] = avg_consumption
+        context['min'] = min_consumption
+
         return context
