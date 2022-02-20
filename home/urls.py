@@ -2,7 +2,7 @@
 from django.urls import path
 from . import views
 from .views import JanuaryView, FebruaryView, MarchView, AprilView, MayView, JuneView, JulyView, AugustView, \
-    SeptemberView, OctoberView, NovemberView, DecemberView, DailyView, AnnualView
+    SeptemberView, OctoberView, NovemberView, DecemberView, DailyView, AnnualView, Year2018View, Year2021View
 
 
 urlpatterns = [
@@ -25,6 +25,8 @@ urlpatterns = [
     path('index/analyzer/12p', DecemberView.as_view(), name='december'),
     path('index/analyzer/000d', DailyView.as_view(), name='daily'),
     path('index/analyzer/000w', AnnualView.as_view(), name='annual'),
+    path('index/analyzer/0000y018', Year2018View.as_view(), name='year2018'),
+    path('index/analyzer/0000y021', Year2021View.as_view(), name='year2021'),
 
 
 

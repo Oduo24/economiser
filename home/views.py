@@ -6,7 +6,7 @@ from django.core.mail import BadHeaderError, send_mail
 from django.conf import settings
 from .forms import EquipmentForm, MeterReadingForm
 from .models import Printer, HandDryer, FluorescentTube, Floodlight, Amplifier, Photocopier, Computers, MeterReading, \
-    Meter1, Meter2, Meter3
+    Meter1, Meter2, Meter3, HistoryData
 from django.contrib import messages
 
 import pandas as ps
@@ -16,9 +16,6 @@ from django.views.generic.base import TemplateView
 
 import numpy
 from numpy import mean
-
-
-
 
 
 def IndexView(request):
@@ -389,30 +386,15 @@ class DailyView(TemplateView):
         avg_consumption = mean(y)
         max_consumption = numpy.amax(y)
 
-        dictA = {"Fluorescent-Tubes": 3,
-                 "Floodlights": 11,
-                 "Amplifiers": 11,
-                 "Printers": 8}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        equipment_value = {"Fluorescent-Tubes": fluorescent_cons,
+                           "Floodlights": floodlight_cons,
+                           "Amplifiers": amplifier_cons,
+                           "Printers": printer_cons}
+        for equipment, cons in equipment_value.items():
+            if cons == max_consumption:
+                print(equipment)
+        for equipment_values in equipment_value.values():
+            print(equipment_values)
 
 
 
@@ -431,12 +413,13 @@ class AnnualView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-        y = Meter3.objects.filter(date__istartswith='2022-01').values_list('consumption', flat=True)
+        x = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november',
+                                                                                                                'december']
+        y = HistoryData.objects.values_list('year_2017', flat=True)
 
-        fig = px.line(x=x, y=y,
+        fig = px.bar(x=x, y=y,
                       labels={
-                          "x": "Weeks",
+                          "x": "Months",
                           "y": "Consumption (kWh)",
                       })
         div = plot(fig, auto_open=False, output_type='div')
@@ -444,24 +427,39 @@ class AnnualView(TemplateView):
         return context
 
 
+class Year2018View(TemplateView):
+    template_name = 'year2018.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november',
+             'december']
+        y = HistoryData.objects.values_list('year_2018', flat=True)
+
+        fig = px.bar(x=x, y=y,
+                     labels={
+                         "x": "Months",
+                         "y": "Consumption (kWh)",
+                     })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context
 
 
+class Year2021View(TemplateView):
+    template_name = 'year2021.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        x = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november',
+             'december']
+        y = HistoryData.objects.values_list('year_2021', flat=True)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        fig = px.bar(x=x, y=y,
+                     labels={
+                         "x": "Months",
+                         "y": "Consumption (kWh)",
+                     })
+        div = plot(fig, auto_open=False, output_type='div')
+        context['graph'] = div
+        return context

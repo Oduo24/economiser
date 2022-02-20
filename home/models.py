@@ -70,6 +70,18 @@ class Meter3(models.Model):
     consumption = models.DecimalField(max_digits=9, decimal_places=2)
 
 
+class HistoricalData(models.Model):
+    year_2017 = models.CharField(max_length=100)
+    year_2018 = models.CharField(max_length=100)
+    year_2021 = models.CharField(max_length=100)
+
+
+class HistoryData(models.Model):
+    month = models.CharField(max_length=100)
+    year_2017 = models.DecimalField(max_digits=9, decimal_places=2)
+    year_2018 = models.DecimalField(max_digits=9, decimal_places=2)
+    year_2021 = models.DecimalField(max_digits=9, decimal_places=2)
+
 
 
 
